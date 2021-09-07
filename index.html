@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#141c2f">
+
+    <!-- font poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <!-- font poppins -->
+
+    <!-- icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- icons -->
+
+    <!-- imports css -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- imports css -->
+
+    <!-- favicon global -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/img/ms-icon-144x144.png">
+    <!-- favicon global -->
+    
+    <title>Consumindo API do github</title>
+  </head>
+  <body>
+
+    <header class="header">
+      <h1>devefinder</h1>
+      <div class="containerToggle toggleDarkMode">
+        <span class="Noite_Dia">noite</span>
+        <i style="font-size: 20px;" class="ri-moon-line toggle"></i>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="containerSearch">
+        <div class="containerInputSeacrh">
+          <i style="color: var(--azulMedium); font-size: 20px;"class="ri-search-line"></i>
+          <div class="inputBox">
+            <label for="pesquisarPerfil" class="sr-only">Pesquisar Perfil Github</label>
+            <input type="text" id="pesquisarPerfil" placeholder="Perfil github...">
+          </div>
+        </div>
+        <i class="btnSeacrh" id="search" type="submit">Pesquisar</i>
+      </div>
+      <span class="erroSearch ocult">Eu acho que o seu teclado parou de funcionar, tente novamente...</span>
+      <div class="containerInfos">
+        <div class="containerZero">
+          <img src="assets/img/Octocat.png" alt="Mascote github" style="width: 250px;">
+          <span>Olá, digite algum nome que eu vou buscá-lo</span>
+        </div>
+        <!-- <div class="imgPerfil">
+          <img loading="lazy" src="https://avatars.githubusercontent.com/u/72842446?s=400&u=88a6a0bb0f8d7bbb5934e84bff1d9fb3fa9137b5&v=4" alt="Foto de perfil github">
+        </div>
+        <div class="containerTextsInfos">
+          <div class="namesProfile">
+            <div class="nameUser">
+              <h1>Rodrigo Higino</h1>
+              <a href="https://github.com/higinoRodrigo" target="_blank" class="linkPerfil">@higinoRodrigo</a>
+            </div>
+            <span>Cadastrou 25 Jan 2011</span>
+          </div>
+          <div class="bioUser">
+            <span>Frontend Developer 🚀</span>
+          </div>
+          <div class="boxFollows">
+            <div class="infosFollows">
+              <span>Repos</span>
+              <span>8</span>
+            </div>
+            <div class="infosFollows">
+              <span>Followers</span>
+              <span>3938</span>
+            </div>
+            <div class="infosFollows">
+              <span>Following</span>
+              <span>9</span>
+            </div>
+          </div>
+          <div class="boxNetworking">
+            <div class="sociaisBox">
+              <div class="iconTextSociais">
+                <i class="ri-map-pin-2-fill"></i>
+                <span>San Francisco</span>
+              </div>
+              <div class="iconTextSociais">
+                <i class="ri-links-line"></i>
+                <span>https://github.blog</span>
+              </div>
+            </div>
+            <div class="sociaisBox">
+              <div class="iconTextSociais">
+                <i class="ri-twitter-fill notAvailable"></i>
+                <span>Não localizado</span>
+              </div>
+              <div class="iconTextSociais">
+                <i class="ri-building-fill"></i>
+                <span>@github</span>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </main>
+
+    <footer>
+      <h1><a href="https://github.com/higinoRodrigo" target="_blank">2021 higinoRodrigo</a></h1>
+    </footer>
+
+    <script src="assets/js/dark.js"></script>
+    <script src="assets/js/api.js"></script>
+  </body>
+</html>

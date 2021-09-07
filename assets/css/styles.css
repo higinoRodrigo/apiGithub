@@ -1,0 +1,366 @@
+/*global, resetes, etc...*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  --azulMedium: #0079fe;
+  --whiteDefault: #fff;
+  --blackDefault: #000;
+
+  --background: #141c2f;
+  --contraste: #1f2a48;
+
+  font-size: 62.5%; /* 10px */
+}
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--background);
+  color: var(--whiteDefault);
+  transition: 1s;
+}
+body,
+button,
+input,
+textarea {
+  font-size: clamp(14px, 1.6rem, 2vw);
+  font-family: 'Poppins', sans-serif;
+}
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background: var(--background);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--whiteDefault);
+  border-radius: 20px; 
+  border: 2px solid var(--background);
+}
+input{
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  border:none;
+  outline: none;
+  font-size: 1em;
+  font-weight: 200;
+  background-color: transparent;
+  color: var(--whiteDefault);
+}
+input::-webkit-input-placeholder {
+  color: var(--whiteDefault);
+}
+.sr-only {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+/*global, resetes, etc...*/
+
+/*Header, logo e toggle do dark mode*/
+.header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3rem 0;
+}
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: "Arial Narrow", sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+header .containerToggle {
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+header .containerToggle:hover {
+  opacity: .9;
+}
+header .containerToggle:active {
+  transform: scale(.95)
+}
+header .containerToggle span{
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+  margin-right: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/*Header, logo e toggle do dark mode*/
+
+
+.main {
+  width: 100%;
+}
+/*Search*/
+main .containerSearch {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: .6rem .6rem .6rem 2rem;
+  border-radius: 1rem;
+  background-color: var(--contraste)
+}
+main .containerInputSeacrh {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+main .containerInputSeacrh > i{
+  margin-right: 1.6rem;
+}
+main .inputBox{
+  width: 100%;
+}
+main .btnSeacrh{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 100px;
+  background-color: var(--azulMedium);
+  color: #fff;
+  padding: .5rem 1.2rem;
+  border-radius: .6rem;
+  font-style: normal;
+  font-size: .8em;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+main .btnSeacrh:hover{
+  opacity: .7;
+}
+main .btnSeacrh:active{
+  transform: scale(.95);
+}
+
+.erroSearch.ocult, .containerZero.ocult {
+  display: none;
+}
+.erroSearch {
+  display: flex;
+  color: rgb(182, 0, 0);
+  margin-left: 5.5rem;
+  margin-top: -20px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 0.7em;
+  transition: .3s;
+}
+
+/*Search*/
+
+/*Main infos*/
+main .containerInfos {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 3rem;
+  border-radius: 1rem;
+  background-color: var(--contraste)
+}
+
+/*tela qnd nao foi feito nenhuma busca*/
+.containerZero {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.containerZero > span{
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--whiteDefault);
+}
+/*tela qnd nao foi feito nenhuma busca*/
+
+
+/*imagem do perfil*/
+main .containerInfos .imgPerfil{
+  margin-right: 3.5rem;
+}
+main .containerInfos .imgPerfil img{
+  width: 150px;
+  border-radius: 50%;
+}
+/*imagem do perfil*/
+
+/*Nome do perfil, data de criação*/
+main .containerTextsInfos{
+  width: 100%;
+}
+main .containerTextsInfos .namesProfile{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+main .containerTextsInfos .namesProfile div > h1{
+  font-size: 2.5rem;
+  letter-spacing: .2rem;
+}
+main .containerTextsInfos .namesProfile .linkPerfil{
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--azulMedium);
+}
+main .containerTextsInfos .namesProfile > span{
+  color: #aaa;
+}
+/*Nome do perfil, data de criação*/
+
+/*Bio*/
+main .containerTextsInfos .bioUser > span{
+  color: #aaa;
+}
+/*Bio*/
+
+/*Informações dos seguidores e repositórios*/
+main .containerTextsInfos .boxFollows{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: .6rem;
+  margin: 2rem 0;
+  padding: 1.5rem 2.5rem;
+  background-color: var(--background)
+}
+main .containerTextsInfos .boxFollows .infosFollows{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+main .containerTextsInfos .boxFollows .infosFollows > span:first-child{
+  color: #aaa;
+}
+main .containerTextsInfos .boxFollows .infosFollows > span:last-child{
+  font-weight: bold;
+  font-size: 2rem;
+}
+/*Informações dos seguidores e repositórios*/
+
+/*Redes sociais, localização*/
+main .containerTextsInfos .boxNetworking{
+  display: flex;
+  flex-direction: row;
+  margin: 2rem 0;
+}
+main .containerTextsInfos .boxNetworking span{
+  max-width: 150px;
+  overflow: hidden;
+}
+main .containerTextsInfos .boxNetworking a{
+  max-width: 150px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #aaa;
+
+}
+main .containerTextsInfos .sociaisBox{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+main .containerTextsInfos .iconTextSociais{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+main .containerTextsInfos .iconTextSociais:first-child{
+  margin-bottom: 1rem;
+}
+main .containerTextsInfos .iconTextSociais > i{
+  margin-right: 2rem;
+}
+main .containerTextsInfos .iconTextSociais > i.notAvailable{
+  color: #aaa;
+}
+main .containerTextsInfos .iconTextSociais > span{
+  color: #aaa;
+}
+/*Redes sociais, localização*/
+/*MAIN INFOS*/
+
+/* footer */
+footer {
+  margin-top: 3rem;
+}
+footer h1 > a {
+  word-spacing: 1.6rem;
+  font-style: italic;
+  text-decoration: none;
+  color: #aaa;
+  font-size: 1.6rem;
+}
+footer h1 > a:hover {
+  color: var(--whiteDefault);
+}
+/* footer */
+
+
+@media screen and (max-width: 600px) {
+  .header {
+    margin-top: 0;
+  }
+  main .containerInfos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main .nameUser, main .containerTextsInfos .bioUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main .containerTextsInfos .namesProfile {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  main .containerTextsInfos .boxNetworking{
+    flex-direction: column;
+  }
+  main .containerTextsInfos .boxNetworking .sociaisBox:first-child{
+    margin-bottom: 1rem;
+  }
+
+}
